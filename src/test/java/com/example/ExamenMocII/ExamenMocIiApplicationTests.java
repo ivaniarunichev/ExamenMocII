@@ -9,5 +9,4 @@ class ExamenMocIiApplicationTests {
 	@Test
 	void contextLoads() {
 	}
-
 }
