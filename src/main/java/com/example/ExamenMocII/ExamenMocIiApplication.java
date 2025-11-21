@@ -12,4 +12,4 @@ public class ExamenMocIiApplication {
 
 }
 //Desde este punto guardamos bien los commits
-//Aqui se guarda la organizacion
+//Aqui se guarda la organizacion buena con release para poder juntarlo con master
