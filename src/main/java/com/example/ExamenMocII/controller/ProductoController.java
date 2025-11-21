@@ -5,6 +5,7 @@ import com.example.ExamenMocII.service.ProductoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 public class ProductoController {
@@ -27,20 +28,17 @@ public class ProductoController {
     }
 
     @GetMapping(value = "/productos")
-    public Object getProductos(@RequestParam(defaultValue = "0.0") Float precio,
-                               @RequestParam(defaultValue = "") String categoria) {
-        while (this.productoService.findByPrecioAndCategoria(precio, categoria)){
-            return this.productoService.findAllProductos();
-        }
+    public List<Producto> getProductos(@RequestParam(defaultValue = "0.0") Float precio,
+                                       @RequestParam(defaultValue = "") String categoria) {
 
-        while (this.productoService.findByPrecio(precio)){
-            return this.productoService.findByPrecio(precio);
-        }
-
-        while (this.productoService.findByCategoria(categoria)){
-            return this.productoService.findByCategoria(categoria);
-        }
-        return null;
+            if (precio == 0.0 && categoria == ""){
+                return this.productoService.findAllProductos();
+            } else if (categoria == ""){
+                return this.productoService.findByPrecio(precio);
+            } else if (precio == 0.0){
+                return this.productoService.findByCategoria(categoria);
+            }
+            return null;
     }
 
     @GetMapping(value = "/producto/{productoId}")

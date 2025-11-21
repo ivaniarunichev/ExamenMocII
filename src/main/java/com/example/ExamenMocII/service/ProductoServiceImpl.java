@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.util.List;
 import java.util.Optional;
 
-public class ProductoServiceImpl implements ProductoService {
+public abstract class ProductoServiceImpl implements ProductoService {
 
     @Autowired
     private ProductoRepository productoRepository;
@@ -23,17 +23,17 @@ public class ProductoServiceImpl implements ProductoService {
     }
 
     @Override
-    public boolean findByCategoria(String categoria) {
+    public List<Producto> findByCategoria(String categoria) {
         return this.productoRepository.findByCategoria(categoria);
     }
 
     @Override
-    public boolean findByPrecio(float precio) {
+    public List<Producto> findByPrecio(float precio) {
         return this.productoRepository.findByPrecio(precio);
     }
 
     @Override
-    public boolean findByPrecioAndCategoria(float precio, String categoria) {
+    public List<Producto> findByPrecioAndCategoria(float precio, String categoria) {
         return this.productoRepository.findByPrecioAndCategoria(precio, categoria);
     }
 
