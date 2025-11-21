@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Optional;
 
 public class ProductoController {
-
+    //ProductoController solucionado
     @Autowired
     private ProductoService productoService;
 
