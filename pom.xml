@@ -10,11 +10,7 @@
 	</parent>
 	<groupId>com.example</groupId>
 	<artifactId>ExamenMocII</artifactId>
-<<<<<<< HEAD
-	<version>0.0.2-SNAPSHOT</version>
-=======
-	<version>0.1.1</version>
->>>>>>> error
+	<version>0.1.2-SNAPSHOT</version>
 	<name>ExamenMocII</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
