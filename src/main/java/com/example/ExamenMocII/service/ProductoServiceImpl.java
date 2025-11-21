@@ -3,10 +3,12 @@ package com.example.ExamenMocII.service;
 import com.example.ExamenMocII.entity.Producto;
 import com.example.ExamenMocII.repository.ProductoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public abstract class ProductoServiceImpl implements ProductoService {
 
     @Autowired
@@ -28,12 +30,12 @@ public abstract class ProductoServiceImpl implements ProductoService {
     }
 
     @Override
-    public List<Producto> findByPrecio(float precio) {
+    public List<Producto> findByPrecio(Float precio) {
         return this.productoRepository.findByPrecio(precio);
     }
 
     @Override
-    public List<Producto> findByPrecioAndCategoria(float precio, String categoria) {
+    public List<Producto> findByPrecioAndCategoria(Float precio, String categoria) {
         return this.productoRepository.findByPrecioAndCategoria(precio, categoria);
     }
 
