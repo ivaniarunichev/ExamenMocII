@@ -3,11 +3,9 @@ package com.example.ExamenMocII.repository;
 import com.example.ExamenMocII.entity.Producto;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import java.util.List;
-
 public interface ProductoRepository extends JpaRepository<Producto, Long> {
-    List<Producto> findByPrecio(float precio);
-    List<Producto> findByCategoria(String categoria);
+    boolean findByPrecio(float precio);
+    boolean findByCategoria(String categoria);
 
-    List<Producto> findByPrecioAndCategoria(float precio, String categoria);
+    boolean findByPrecioAndCategoria(float precio, String categoria);
 }
