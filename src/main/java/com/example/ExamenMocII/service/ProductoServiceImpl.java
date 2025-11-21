@@ -1,3 +1,12 @@
+package com.example.ExamenMocII.service;
+
+import com.example.ExamenMocII.entity.Producto;
+import com.example.ExamenMocII.repository.ProductoRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import java.util.List;
+import java.util.Optional;
+
 public class ProductoServiceImpl implements ProductoService {
 
     @Autowired
@@ -14,17 +23,17 @@ public class ProductoServiceImpl implements ProductoService {
     }
 
     @Override
-    public List<Producto> findByCategoria(String categoria) {
+    public boolean findByCategoria(String categoria) {
         return this.productoRepository.findByCategoria(categoria);
     }
 
     @Override
-    public List<Producto> findByPrecio(float precio) {
+    public boolean findByPrecio(float precio) {
         return this.productoRepository.findByPrecio(precio);
     }
 
     @Override
-    public List<Producto> findByPrecioAndCategoria(float precio, String categoria) {
+    public boolean findByPrecioAndCategoria(float precio, String categoria) {
         return this.productoRepository.findByPrecioAndCategoria(precio, categoria);
     }
 
