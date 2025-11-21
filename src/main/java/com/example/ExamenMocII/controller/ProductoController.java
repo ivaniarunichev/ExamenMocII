@@ -38,10 +38,9 @@ public class ProductoController {
                 return this.productoService.findAllProductos();
             } else if (categoria == ""){
                 return this.productoService.findByPrecio(precio);
-            } else if (precio == 0.0){
+            } else{
                 return this.productoService.findByCategoria(categoria);
             }
-            return null;
     }
 
     @GetMapping("/producto/{productoId}")
