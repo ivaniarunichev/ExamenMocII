@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public abstract class ProductoServiceImpl implements ProductoService {
+public class ProductoServiceImpl implements ProductoService {
 
     @Autowired
     private ProductoRepository productoRepository;
@@ -32,6 +32,11 @@ public abstract class ProductoServiceImpl implements ProductoService {
     @Override
     public List<Producto> findByPrecio(Float precio) {
         return this.productoRepository.findByPrecio(precio);
+    }
+
+    @Override
+    public List<Producto> findByPrecio(float precio) {
+        return List.of();
     }
 
     @Override
