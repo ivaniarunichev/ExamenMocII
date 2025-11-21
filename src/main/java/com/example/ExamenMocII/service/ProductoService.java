@@ -13,7 +13,7 @@ public interface ProductoService {
 
     List<Producto> findByPrecio(float precio);
 
-    List<Producto> findByPrecioAndCategoria(float precio, String categoria);
+    List<Producto> findByPrecioAndCategoria(Float precio, String categoria);
 
     Producto addProducto(Producto producto);
     void eliminarProductoById(Long productoId);
